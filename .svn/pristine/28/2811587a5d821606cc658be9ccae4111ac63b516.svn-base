@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "warmup3.h"
+
+int main()
+{
+        int array[] = {3, 2, 8, 5, 4};
+        //printf("%d\n",remove_max(array,5));
+        int l = 5;
+        printf("%d\n",remove_max_in_out(array,&l));
+        char board[8][8];
+        init_board(board);
+        print_board(board);
+}

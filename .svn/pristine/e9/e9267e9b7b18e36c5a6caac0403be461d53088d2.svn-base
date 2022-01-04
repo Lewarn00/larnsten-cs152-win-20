@@ -1,0 +1,2 @@
+testprogram: warmup1.c
+	clang -Wall -o testprogram warmup1.c

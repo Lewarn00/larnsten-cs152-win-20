@@ -1,0 +1,23 @@
+Pre-lab 7 questions
+Name: Lewis Arnsten
+Cnet ID: larnsten
+Lab start time: 5:00pm
+
+Note: This week, it is free response rather than multiple choice
+1. How is a tree different from a linked list?
+A tree is different from a linked list in that every node of a tree has a parent and can have multiple 
+children, while a linked list is sequential with every element pointing to a single following element
+in the defined order.
+
+
+2. What are the two properties that define a binary search tree?
+1) The key at a node must be greater than the keys in the left subtree and less than the 
+keys in the right subtree.
+2) The left and right subtrees must also be binary search trees. Each key must be unique.
+
+
+3. What type do we use when we want it to be a pointer, but we don't want to restrict the type to which the pointer points?
+You can use a void pointer to point to any type.
+
+If you make an ordered data structure (e.g. sorted linked list or BST), you need to perform comparisons to sort the data. If you are implementing a generic data structure that is allowed to hold any type, you need to accept a compare function as an input. What is the signature / prototype of that function that will be passed in?
+      d) void *compare(void *x, void *y);

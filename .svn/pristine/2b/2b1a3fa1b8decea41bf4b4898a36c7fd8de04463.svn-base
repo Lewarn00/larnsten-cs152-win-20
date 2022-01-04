@@ -1,0 +1,32 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "warmup3.h"
+
+/* print_board
+ * prints the contents of the checkerboard.
+ * The pieces are 'b', 'w', the kinged ones
+ * are 'B'and 'W', and empty spaces are '*'
+ * inputs:
+ *    char board[NUM_ROWS][NUM_COLS] - an NUM_ROWSxNUM_COLS board
+ * outputs:
+ *    none. prints the results.
+ */
+void print_board( char board[NUM_ROWS][NUM_COLS] )
+{
+        unsigned int i, j;
+        printf("   ");
+        for(j=0;j<NUM_COLS;j++)
+        {
+                printf("%u ",j);
+        }
+        printf("\n");
+        for(i=0;i<NUM_ROWS;i++)
+        {
+                printf("%u: ",i);
+                for(j=0;j<NUM_COLS;j++)
+                {
+                        printf("%c ",board[i][j]);
+                }
+                printf("\n");
+        }
+}

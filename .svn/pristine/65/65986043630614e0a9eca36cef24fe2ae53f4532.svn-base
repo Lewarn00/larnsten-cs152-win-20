@@ -1,0 +1,21 @@
+./hw5 0 "" ""
+./hw5 0 a a
+./hw5 0 helloworld helloworld
+  
+./hw5 1 "" ""
+./hw5 1 a a
+./hw5 1 helloworld helloworld
+
+./hw5 2 "" "" ""
+./hw5 2 a a aa
+./hw5 2 hi Helloworld hiHelloworld
+
+./hw5 3 a b NULL
+./hw5 3 a a a
+./hw5 3 hithere t there
+
+./hw5 4 happy happy 0
+./hw5 4 Happy happy -1
+./hw5 4 z a 1
+./hw5 4 zap zappa -1
+./hw5 4 evol etab 1

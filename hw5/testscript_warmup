@@ -1,0 +1,17 @@
+./warmup5 0 "" "" ""
+./warmup5 0 a z az
+./warmup5 0 Hello Whatsup HelloWhatsup
+
+./warmup5 1 0 0 0 0.. 16
+./warmup5 1 54351 3 2 543210...0 16
+./warmup5 1 5432 18 6 54320...6...0 32
+./warmup5 1 2222 40 4 2222000...4 41
+
+./warmup5 2 0 0 0
+./warmup5 2 1231 10 0
+./warmup5 2 1412 1 4
+./warmup5 2 123115 4 1
+
+./warmup5 3 20 20 0 0 0 test20x20B.png
+./warmup5 3 200 200 255 255 255 test200x200W.png
+./warmup5 3 15 15 120 50 250 test15x15M.png

@@ -1,0 +1,189 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "warmup3.h"
+
+int remove_max(int array[], unsigned int length){
+	int max = 0;
+	int maxes_index[length];
+	int max_offset = 0;
+
+	for(int i = 0; i < length; i++){
+		if(array[i] >= max){
+			maxes_index[i] = i;
+			max = array[i];
+		}else{
+			maxes_index[i] = 0;
+		}
+	}
+
+	for(int i = 0; i < length; i++){
+		if(maxes_index[i] > 0){
+			for(int n = maxes_index[i] - max_offset; n < length; n++){
+				array[n] = array[n + 1];
+			}
+			max_offset++;
+		}
+	}
+
+	for(int n = 0; n < length; n++) {
+        printf("%d ", array[n]);
+    }
+	//TODO: array with length 0 
+	return max;
+}
+
+/* init_board
+ * initializes the contents of the checkerboard.
+ * The blue pieces occupy rows 0 to (NUM_ROWS/2 - 2), and
+ * the white pieces occupy rows (NUM_ROWS / 2 + 1) to NUM_ROWS-1
+ * An 8x8 board looks like this:
+   * b * b * b * b
+   b * b * b * b *
+   * b * b * b * b
+   * * * * * * * *
+   * * * * * * * *
+   w * w * w * w *
+   * w * w * w * w
+   w * w * w * w *
+ * inputs:
+ *    char board[NUM_ROWS][NUM_COLS] - an NUM_ROWSxNUM_COLS board
+ * outputs:
+ *    none. prints the results.
+ */
+void init_board(char board[NUM_ROWS][NUM_COLS]){
+	int blue = (NUM_ROWS/2 - 2);
+	int white = (NUM_ROWS / 2 + 1);
+
+	for(int i = 0; i < NUM_ROWS; i++){
+		for(int j = 0; j < NUM_COLS; j++){
+			if(i <= blue && i % 2 == 0){
+				if(j % 2 != 0){
+					board[i][j] = 'b';
+					//printf("b ");
+				}
+				else{
+					board[i][j] = '*';
+					//printf("* ");
+				}
+			}
+			else if(i <= blue && i % 2 != 0){
+				if(j % 2 != 0){
+					board[i][j] = '*';
+					//printf("* ");
+				}
+				else{
+					board[i][j] = 'b';
+					//printf("b ");
+				}
+			}
+			else if(i >= white && i % 2 == 0){
+				if(j % 2 != 0){
+					board[i][j] = '*';
+					//printf("* ");
+				}
+				else{
+					board[i][j] = 'w';
+					//printf("w ");
+				}
+			}
+			else if(i >= white && i % 2 != 0){
+				if(j % 2 != 0){
+					board[i][j] = 'w';
+					//printf("w ");
+				}
+				else{
+					board[i][j] = '*';
+					//printf("* ");
+				}
+			}
+			else{
+				board[i][j] = '*';
+				//printf("* ");
+			}
+		}
+		//printf("\n");
+	}
+}
+
+
+unsigned int place_piece(char board[NUM_ROWS][NUM_COLS], char player, unsigned int row, unsigned int col){
+
+	if(row > NUM_ROWS-1 && col > NUM_COLS-1 && board[row][col] == '*'){
+		board[row][col] = player;
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
+void area_and_perimeter(double height, double length, double *area, double *perimeter){
+	double area_value = height * length;
+	double perimeter_value = 2 * height + 2 * length;
+
+	*area = area_value;
+	*perimeter = perimeter_value;
+}
+
+int remove_max_in_out(int array[], unsigned int *length){
+	
+	int max = 0;
+	int maxes_index[*length];
+	int max_offset = 0;
+	int new_length = *length;
+	
+	for(int i = 0; i < *length; i++){
+		if(array[i] >= max){
+			maxes_index[i] = i;
+			max = array[i];
+		}else{
+			maxes_index[i] = 0;
+		}
+	}
+
+	for(int i = 0; i < *length; i++){
+		if(maxes_index[i] > 0){
+			for(int n = maxes_index[i] - max_offset; n < *length; n++){
+				array[n] = array[n + 1];
+			}
+			max_offset++;
+			new_length--;
+		}
+	}
+
+	for(int n = 0; n < *length; n++) {
+        printf("%d ", array[n]);
+    }
+	//TODO: array with length 0 
+	*length = new_length;
+	return *length;
+}
+
+/* print_board
+ * prints the contents of the checkerboard.
+ * The pieces are 'b', 'w', the kinged ones
+ * are 'B'and 'W', and empty spaces are '*'
+ * inputs:
+ *    char board[NUM_ROWS][NUM_COLS] - an NUM_ROWSxNUM_COLS board
+ * outputs:
+ *    none. prints the results.
+ */
+void print_board( char board[NUM_ROWS][NUM_COLS] )
+{
+        unsigned int i, j;
+        printf("   ");
+        for(j=0;j<NUM_COLS;j++)
+        {
+                printf("%u ",j);
+        }
+        printf("\n");
+        for(i=0;i<NUM_ROWS;i++)
+        {
+                printf("%u: ",i);
+                for(j=0;j<NUM_COLS;j++)
+                {
+                        printf("%c ",board[i][j]);
+                }
+                printf("\n");
+        }
+}

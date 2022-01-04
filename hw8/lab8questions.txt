@@ -1,0 +1,18 @@
+Pre-lab 8 questions
+Name: Lewis Arnsten 
+Cnet ID: larnsten
+Lab start time: 5:00pm
+
+1. What are the properties that define a heap?
+A max heap is a tree structure where the values of the left and right trees are less 
+than the value of the root for all subtrees. The opposite is true for a min heap.
+
+2. What functionality does a heap give up to obtain its performance guarantees?
+There is no implied order between sibling nodes for an in-order traversal.
+
+3. When implementing an abstract data type that is a container class, why is an iterator created rather than just letting a program write their own for loop that iterates through the structure?
+Since there is no implied order bewteen sibling nodes the iterator must be created to ensure that 
+the data type is looped through in the correct order.
+
+4. When implementing an abstract data type that is a container class, why do we use void pointers and function pointers?
+We use void and function pointers to allow for the tree to hold and compare data of any type.

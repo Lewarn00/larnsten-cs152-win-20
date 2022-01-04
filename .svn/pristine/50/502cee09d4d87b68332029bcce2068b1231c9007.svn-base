@@ -1,0 +1,74 @@
+1. Comment out #include <stdio.h> from errorwarmup1.c (place "//" before it)
+1)errorwarmup.c:16:2: warning: implicitly declaring library function 'printf' with type
+      'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("Integer: %d\n",ival);
+        ^
+errorwarmup.c:16:2: note: include the header <stdio.h> or explicitly provide a
+      declaration for 'printf'
+
+2. Declare the same variable name twice
+2)errorwarmup.c:67:8: error: redefinition of 'cel'
+        float cel;
+              ^
+errorwarmup.c:66:8: note: previous definition is here
+        float cel;
+              ^
+1 error generated.
+
+3. Remove a variable declaration
+3)errorwarmup.c:66:2: error: use of undeclared identifier 'cel'
+        cel = (fahr-32.0) * (5.0/9.0);
+        ^
+errorwarmup.c:67:9: error: use of undeclared identifier 'cel'
+        return cel;
+               ^
+2 errors generated.
+
+4. Misspell a variable name or function name
+4)errorwarmup.c:67:2: error: use of undeclared identifier 'cel'; did you mean 'cell'?
+        cel = (fahr-32.0) * (5.0/9.0);
+        ^~~
+        cell
+errorwarmup.c:66:8: note: 'cell' declared here
+        float cell;
+              ^
+errorwarmup.c:68:9: error: use of undeclared identifier 'cel'; did you mean 'cell'?
+        return cel;
+               ^~~
+               cell
+errorwarmup.c:66:8: note: 'cell' declared here
+        float cell;
+              ^
+2 errors generated.
+
+5. Remove a closed curly brace
+5)errorwarmup.c:32:1: error: function definition is not allowed here
+{
+^
+errorwarmup.c:52:1: error: function definition is not allowed here
+{
+^
+errorwarmup.c:65:1: error: function definition is not allowed here
+{
+^
+errorwarmup.c:74:1: error: function definition is not allowed here
+{
+^
+errorwarmup.c:87:1: error: function definition is not allowed here
+{
+^
+errorwarmup.c:113:2: error: expected '}'
+}
+ ^
+errorwarmup.c:15:1: note: to match this '{'
+{
+^
+6 errors generated.
+
+6. Remove a semi-colon from the end of one of the lines
+6)errorwarmup.c:54:15: error: expected ';' after return statement
+        return result
+                     ^
+                     ;
+1 error generated.
+ 
